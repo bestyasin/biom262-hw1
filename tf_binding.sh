@@ -9,6 +9,9 @@
 #PBS -m abe
 #PBS -A <account>
 
+#changing to appropriate directory
+cd ~/biom262-hw1
+
 #exercise 1 
 cat tf.bed | grep --word-regexp 'NFKB' > tf.nfkb.bed
 
