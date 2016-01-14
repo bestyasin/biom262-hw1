@@ -2,10 +2,10 @@
 #PBS -l nodes=10:ppn=2  
 #PBS -l walltime=00:50:00
 #PBS -N tf_binding.sh
-#PBS -o <output file>
-#PBS -e	<error file>
+#PBS -o
+#PBS -e	
 #PBS -V
-#PBS -M	<ahmirand@ucsd.edu>
+#PBS -M	ahmirand@ucsd.edu
 #PBS -m abe
 #PBS -A <account>
 
