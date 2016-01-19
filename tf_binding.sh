@@ -1,13 +1,8 @@
 #PBS -q hotel
-#PBS -l nodes=10:ppn=2  
-#PBS -l walltime=00:50:00
+#PBS -l nodes=1:ppn=1  
+#PBS -l walltime=00:10:00
 #PBS -N tf_binding.sh
-#PBS -o
-#PBS -e	
-#PBS -V
-#PBS -M	ahmirand@ucsd.edu
 #PBS -m abe
-#PBS -A <account>
 
 #changing to appropriate directory
 cd ~/biom262-hw1
@@ -22,4 +17,4 @@ awk '{if($3=="transcript"){print $0}}' gencode.v19.annotation.chr22.gtf > gencod
 module load biotools
 bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -l 2000 -r 0 > gencode.v19.annotation.chr22.transcript.promoter.gtf
 
-git blame tf.binding.sh
+git blame tf_binding.sh
