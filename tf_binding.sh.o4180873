@@ -1,0 +1,21 @@
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800  1) #PBS -q hotel
+a8f50a2c (Alannah Miranda 2016-01-19 13:53:03 -0800  2) #PBS -l nodes=1:ppn=1  
+a8f50a2c (Alannah Miranda 2016-01-19 13:53:03 -0800  3) #PBS -l walltime=00:10:00
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800  4) #PBS -N tf_binding.sh
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800  5) #PBS -m abe
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800  6) 
+c0599bc3 (Alannah Miranda 2016-01-12 09:29:00 -0800  7) #changing to appropriate directory
+c0599bc3 (Alannah Miranda 2016-01-12 09:29:00 -0800  8) cd ~/biom262-hw1
+c0599bc3 (Alannah Miranda 2016-01-12 09:29:00 -0800  9) 
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 10) #exercise 1 
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 11) cat tf.bed | grep --word-regexp 'NFKB' > tf.nfkb.bed
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 12) 
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 13) #exercise 2
+e8c87a56 (Alannah Miranda 2016-01-14 10:30:42 -0800 14) awk '{if($3=="transcript"){print $0}}' gencode.v19.annotation.chr22.gtf > gencode.v19.annotation.chr22.transcript.gtf
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 15) 
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 16) #exercise 3
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 17) module load biotools
+e8c87a56 (Alannah Miranda 2016-01-14 10:30:42 -0800 18) bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -l 2000 -r 0 > gencode.v19.annotation.chr22.transcript.promoter.gtf
+^db3fd06 (Alannah Miranda 2016-01-11 18:21:12 -0800 19) 
+a8f50a2c (Alannah Miranda 2016-01-19 13:53:03 -0800 20) git blame tf_binding.sh
+Nodes:        tscc-0-23
