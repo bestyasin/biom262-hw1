@@ -1,3 +1,4 @@
+#!/bin/csh
 #PBS -q hotel
 #PBS -l nodes=1:ppn=1  
 #PBS -l walltime=00:10:00
@@ -33,8 +34,7 @@ bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.tran
 #person 1 (Alannah)
 echo "Hello I am a message in standard out (stdout)"
 #person 2 (Yasin)
-echo "Hello I am a message in standard error (stderr) >&2 (the >&2 outputs to "secondary" aka "error" output)"
-git blame tf_binding.sh
+echo "Hello I am a message in standard error (stderr)" >&2
 
 
 
