@@ -35,7 +35,6 @@ bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.tran
 echo "Hello I am a message in standard out (stdout)"
 #person 2 (Yasin)
 echo "Hello I am a message in standard error (stderr)" >&2
->>>>>>> c6bb534d56e3787940b4038f2f4fab77c9e95560
 
 
 
