@@ -1,2 +1,47 @@
 Hello I am a message in standard out (stdout)
-Nodes:        tscc-0-3
+088380cc (Alannah Miranda   2016-01-21 09:34:14 -0800  1) #!/bin/csh
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800  2) #PBS -q hotel
+a8f50a2c (Alannah Miranda   2016-01-19 13:53:03 -0800  3) #PBS -l nodes=1:ppn=1  
+a8f50a2c (Alannah Miranda   2016-01-19 13:53:03 -0800  4) #PBS -l walltime=00:10:00
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800  5) #PBS -N tf_binding.sh
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800  6) #PBS -m abe
+78aed7e2 (Alannah Miranda   2016-01-20 22:09:21 -0800  7) #PBS -V
+78aed7e2 (Alannah Miranda   2016-01-20 22:09:21 -0800  8) #PBS -A ucsd-train17
+86cfa5ef (Alannah Miranda   2016-01-21 12:18:15 -0800  9) #PBS -o output
+86cfa5ef (Alannah Miranda   2016-01-21 12:18:15 -0800 10) #PBS -e error
+c0599bc3 (Alannah Miranda   2016-01-12 09:29:00 -0800 11) #changing to appropriate directory
+c0599bc3 (Alannah Miranda   2016-01-12 09:29:00 -0800 12) cd ~/biom262-hw1
+c0599bc3 (Alannah Miranda   2016-01-12 09:29:00 -0800 13) 
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 14) #exercise 1 
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 15) cat tf.bed | grep --word-regexp 'NFKB' > tf.nfkb.bed
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 16) 
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 17) #exercise 2
+e8c87a56 (Alannah Miranda   2016-01-14 10:30:42 -0800 18) awk '{if($3=="transcript"){print $0}}' gencode.v19.annotation.chr22.gtf > gencode.v19.annotation.chr22.transcript.gtf
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 19) 
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 20) #exercise 3
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 21) module load biotools
+e8c87a56 (Alannah Miranda   2016-01-14 10:30:42 -0800 22) bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -l 2000 -r 0 > gencode.v19.annotation.chr22.transcript.promoter.gtf
+^db3fd06 (Alannah Miranda   2016-01-11 18:21:12 -0800 23) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 24) #exercise 4
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 25) module load biotools
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 26) bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf -b tf.nfkb.bed > gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 27) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 28) #exercise 5
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 29) # the strand does not matter, whether you take it into account by adding -s or not, the result remains the same.
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 30) module load biotools
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 31) bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf -fo gencode.v19.annotation.chr22.transcript.promoter.nfkb.fasta -s
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 32) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 33) #exercise 6
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 34) 
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 35) #person 1 (Alannah)
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 36) echo "Hello I am a message in standard out (stdout)"
+4ce6e695 (Alannah Miranda   2016-01-20 22:01:53 -0800 37) #person 2 (Yasin)
+088380cc (Alannah Miranda   2016-01-21 09:34:14 -0800 38) echo "Hello I am a message in standard error (stderr)" >&2
+00000000 (Not Committed Yet 2016-01-21 12:20:18 -0800 39) git blame tf_binding.sh
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 40) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 41) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 42) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 43) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 44) 
+b63d9c5c (bestyasin         2016-01-20 21:48:50 -0800 45) 
+Nodes:        tscc-0-39

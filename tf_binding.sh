@@ -36,7 +36,7 @@ bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.tran
 echo "Hello I am a message in standard out (stdout)"
 #person 2 (Yasin)
 echo "Hello I am a message in standard error (stderr)" >&2
-
+git blame tf_binding.sh
 
 
 
