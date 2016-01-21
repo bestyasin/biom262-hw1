@@ -6,7 +6,8 @@
 #PBS -m abe
 #PBS -V
 #PBS -A ucsd-train17
-
+#PBS -o output
+#PBS -e error
 #changing to appropriate directory
 cd ~/biom262-hw1
 
