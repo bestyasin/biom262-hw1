@@ -29,3 +29,5 @@ bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.tran
 #exercise 6
 
 git blame tf_binding.sh
+
+echo "Hello I am a message in standard error (stderr) >&2 (the >&2 outputs to "secondary" aka "error" output)"
