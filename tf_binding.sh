@@ -1,8 +1,11 @@
+#!/bin/csh
 #PBS -q hotel
 #PBS -l nodes=1:ppn=1  
 #PBS -l walltime=00:10:00
 #PBS -N tf_binding.sh
 #PBS -m abe
+#PBS -V
+#PBS -A ucsd-train17
 
 #changing to appropriate directory
 cd ~/biom262-hw1
@@ -19,18 +22,20 @@ bedtools flank -i gencode.v19.annotation.chr22.transcript.gtf -g hg19.genome -l 
 
 #exercise 4
 module load biotools
-bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf -b t$
+bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf -b tf.nfkb.bed > gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf
 
 #exercise 5
-# the strand does not matter, whether you take it into account by adding -s or $
+# the strand does not matter, whether you take it into account by adding -s or not, the result remains the same.
 module load biotools
-bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.tra$
+bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf -fo gencode.v19.annotation.chr22.transcript.promoter.nfkb.fasta -s
 
 #exercise 6
 
-git blame tf_binding.sh
-
-echo "Hello I am a message in standard error (stderr) >&2 (the >&2 outputs to "$
+#person 1 (Alannah)
+echo "Hello I am a message in standard out (stdout)"
+#person 2 (Yasin)
+echo "Hello I am a message in standard error (stderr)" >&2
+>>>>>>> c6bb534d56e3787940b4038f2f4fab77c9e95560
 
 
 
