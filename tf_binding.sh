@@ -3,6 +3,8 @@
 #PBS -l walltime=00:10:00
 #PBS -N tf_binding.sh
 #PBS -m abe
+#PBS -V
+#PBS -A ucsd-train17
 
 #changing to appropriate directory
 cd ~/biom262-hw1
