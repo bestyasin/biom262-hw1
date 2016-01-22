@@ -5,7 +5,7 @@
 #PBS -N tf_binding.sh
 
 #changing to appropriate directory
-cd ~/biom262-hw1
+cd ~/git-repos/biom262-hw1
 
 #exercise 1 
 cat tf.bed | grep --word-regexp 'NFKB' > tf.nfkb.bed
