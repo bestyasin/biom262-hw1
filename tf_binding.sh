@@ -26,11 +26,10 @@ module load biotools
 bedtools intersect -a gencode.v19.annotation.chr22.transcript.promoter.gtf -b tf.nfkb.bed > gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf
 
 #exercise 5
-echo  "The strand does matter because withot specifying -s it will always give you the sequences from the positive strand. Since we are looking at transcripts the sequences will be different if its negative or positive strand, and we want to see that so we must put -s."
+#"The strand does matter because withot specifying -s it will always give you the sequences from the positive strand. Since we are looking at transcripts the sequences will be different if its negative or positive strand, and we want to see that so we must put -s."
 module load biotools
 bedtools getfasta -fi GRCh37.p13.chr22.fa -bed gencode.v19.annotation.chr22.transcript.promoter.nfkb.gtf -fo gencode.v19.annotation.chr22.transcript.promoter.nfkb.fasta -s
 
-#exercise 6
 
 #person 1 (Alannah)
 echo "Hello I am a message in standard out (stdout)"
