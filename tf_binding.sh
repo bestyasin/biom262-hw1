@@ -3,10 +3,7 @@
 #PBS -l nodes=1:ppn=1  
 #PBS -l walltime=00:10:00
 #PBS -N tf_binding.sh
-#PBS -m abe
-#PBS -V
-#PBS -o output
-#PBS -e error
+
 #changing to appropriate directory
 cd ~/biom262-hw1
 
